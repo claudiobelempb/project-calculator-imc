@@ -1,10 +1,4 @@
-export type LevelType = {
-  title: string;
-  color: string;
-  icon: 'FaThumbsDown' | 'FaThumbsUp';
-  imc: number[];
-  yourImc?: number;
-};
+import { LevelType } from 'types/LevelType';
 
 export const levels: LevelType[] = [
   {
@@ -35,13 +29,18 @@ export const levels: LevelType[] = [
 
 export const calculateImc = (height: number, weight: number) => {
   const imc = weight / (height * height);
+  // const result = levels
+  //   .filter(level => imc >= level.imc[0] && imc < level.imc[1])
+  //   .filter(level => (level.yourImc = imc))
+  //   .map(level => level);
+
+  // return result;
 
   for (const i in levels) {
     if (imc >= levels[i].imc[0] && imc < levels[i].imc[1]) {
       levels[i].yourImc = imc;
       return levels[i];
     }
-
-    return null;
   }
+  return null;
 };

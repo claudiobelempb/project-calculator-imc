@@ -1,4 +1,4 @@
-import React, { ReactNode, useState } from 'react';
+import React, { ReactNode } from 'react';
 
 type ModalDefaultType = {
   modalHeaderTitle: string;
@@ -14,10 +14,6 @@ const ModalDefault: React.FC<ModalDefaultType> = ({
   modalBtnLabel,
   isOnClick,
 }) => {
-  const [modal, setModal] = useState<string>('');
-
-  const toggle = () => setModal(modal);
-
   return (
     <>
       <button
