@@ -3,36 +3,35 @@ import React from 'react';
 import { FaThumbsUp, FaThumbsDown } from 'react-icons/fa';
 import { LevelType } from 'types/LevelType';
 
-const CardLevel: React.FC<LevelType> = ({
-  title,
-  color,
-  icon,
-  imc,
-  yourImc,
-}) => {
+type LevelCardProps = {
+  level: LevelType;
+};
+
+const CardLevel: React.FC<LevelCardProps> = ({ level }) => {
   return (
     <div
       style={{ minHeight: 180 }}
-      className={`p-3 ${color} rounded-3 d-flex flex-column justify-content-center align-items-center`}
+      className={`p-3 ${level.color} rounded-3 d-flex flex-column justify-content-center align-items-center`}
     >
       <div className=" text-center ">
-        {icon === 'FaThumbsDown' ? (
-          <div className={` ${color} `}>
+        {level.icon === 'FaThumbsDown' ? (
+          <div className={` ${level.color} `}>
             <FaThumbsDown className=" text-white fs-2 " />
           </div>
         ) : (
-          <div className={`${color}`}>
+          <div className={`${level.color}`}>
             <FaThumbsUp className=" text-white fs-2 w-auto h-auto" />
           </div>
         )}
       </div>
-      <h3 className="text-white text-center fw-bold">{title}</h3>
+      <h3 className="text-white text-center fw-bold">{level.title}</h3>
       <p className="text-white lead text-center fs-6 fw-bold">
-        IMC está entre <strong>{imc[0]}</strong> é <strong>{imc[1]}</strong>
+        IMC está entre <strong>{level.imc[0]}</strong> é{' '}
+        <strong>{level.imc[1]}</strong>
       </p>
-      {yourImc && (
-        <p className="fw-bold fs-4 text-center text-white">
-          IMC: {yourImc && yourImc.toFixed(2)}
+      {level.yourImc && (
+        <p className="fw-bold fs-6 text-center text-white mt-3">
+          IMC: {level.yourImc} kg/m²
         </p>
       )}
     </div>
