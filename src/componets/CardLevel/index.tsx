@@ -11,7 +11,7 @@ const CardLevel: React.FC<LevelCardProps> = ({ level }) => {
   return (
     <div
       style={{ minHeight: 180 }}
-      className={`p-3 ${level.color} rounded-3 d-flex flex-column justify-content-center align-items-center`}
+      className={`p-3 ${level.color} rounded-2 d-flex flex-column justify-content-center align-items-center`}
     >
       <div className=" text-center ">
         {level.icon === 'FaThumbsDown' ? (

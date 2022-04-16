@@ -46,13 +46,14 @@ function Home() {
             </p>
 
             <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">
+              <label htmlFor="altura" className="form-label">
                 Altura
               </label>
               <input
                 type="number"
-                className="form-control border-2 border-top-0  border-bottom-2 border-end-0 border-start-0"
-                id="exampleFormControlInput1"
+                name="altura"
+                className="form-control border-2 border-bottom border-top-0 border-end-0 border-start-0  rounded-0"
+                id="altura"
                 placeholder="Digite a sua altura Ex: 1.5 (em metros)"
                 onChange={e =>
                   setHeightFiel(parseFloat(maskValor(e.target.value)))
@@ -62,13 +63,14 @@ function Home() {
               />
             </div>
             <div className="mb-3">
-              <label htmlFor="exampleFormControlInput1" className="form-label">
+              <label htmlFor="peso" className="form-label">
                 Peso
               </label>
               <input
                 type="number"
-                className="form-control border-2 border-top-0  border-bottom-2 border-end-0 border-start-0"
-                id="exampleFormControlInput1"
+                name="peso"
+                className="form-control border-2 border-bottom border-top-0 border-end-0 border-start-0  rounded-0"
+                id="peso"
                 placeholder="Digite o seu Peso Ex: 75.5 (em kg)"
                 onChange={e =>
                   setWeightFiel(parseFloat(onlyAllowsNumber(e.target.value)))
@@ -81,7 +83,7 @@ function Home() {
               <button
                 onClick={handleOnClickCalculate}
                 type="button"
-                className="btn btn-primary text-white"
+                className="btn btn-primary text-white rounded-3"
                 disabled={!!showLevel}
               >
                 Calcular
